@@ -57,8 +57,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public List<Employee> getByName(String name) {
 		// TODO Auto-generated method stub
-		// return entityManager.createNativeQuery("SELECT * FROM employee WHERE name LIKE ?0 ", Employee.class) // fungi ? utk memasukkan parameter yg diinginkan
-		return entityManager.createQuery("select e from Employee e where e.name like ?0 ", Employee.class) // Employee dibuat menjadi tipe data. e.name = memangggil employee.name. jd mengquery suat objek class
+		return entityManager.createNativeQuery("SELECT * FROM employee WHERE name LIKE ?0 ", Employee.class) // fungi ? utk memasukkan parameter yg diinginkan
+		// return entityManager.createQuery("select e from Employee e where e.name like ?0 ", Employee.class) // Employee dibuat menjadi tipe data. e.name = memangggil employee.name. jd mengquery suat objek class
 		.setParameter(0, "%" + name + "%")
 		.getResultList();
 	
